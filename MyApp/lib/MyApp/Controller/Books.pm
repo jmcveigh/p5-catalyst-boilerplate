@@ -33,11 +33,24 @@ This subroutine renders a list of the books in MyApp.
 
 =cut
 
-sub list :Local {
+sub booklist :Local {
     my ($self, $c) = @_;
     
-    $c->stash(books => [$c->model('DB::Book')->all]);    
     $c->stash(template => 'books/list.ttkt.html');
+}
+
+=head2 booklist_json
+
+This subroutine outputs a list of the books in MyApp as JSON
+
+=cut
+
+use Data::Dumper;
+
+sub booklist_json : Local {
+    my($self, $c) = @_;
+    $c->stash(data => [$c->model('DB::Book')->search({})->hashref_array]);
+    $c->forward('View::JSON');
 }
 
 =encoding utf8

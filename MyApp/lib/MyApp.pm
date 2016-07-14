@@ -39,9 +39,13 @@ our $VERSION = '0.01';
 
 __PACKAGE__->config(
     name => 'MyApp',
-    # Disable deprecated behavior needed by old applications
+    'View::JSON' => {
+        allow_callback  => 1,
+        callback_param  => 'cb',
+        expose_stash => [ qw( data ) ],
+    },
     disable_component_resolution_regex_fallback => 1,
-    enable_catalyst_header => 1, # Send X-Catalyst header
+    enable_catalyst_header => 1,
 );
 
 # Start the application

@@ -108,6 +108,7 @@ __PACKAGE__->many_to_many("books", "book_authors", "book");
 # Created by DBIx::Class::Schema::Loader v0.07045 @ 2016-07-14 11:54:16
 # DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:jjySy/980fhmgj51SXmPIA
 
+__PACKAGE__->resultset_class('DBIx::Class::ResultSet::HashRef');
 
 # You can replace this text with custom code or comments, and it will be preserved on regeneration
 __PACKAGE__->meta->make_immutable;

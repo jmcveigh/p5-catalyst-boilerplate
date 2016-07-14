@@ -1,12 +1,9 @@
 [% META title = 'Book List' -%]
-<table>
-<tr><th>Title</th><th>Rating</th><th>Author(s)</th></tr>
-[% # Display each book in a table row %]
-[% FOREACH book IN books -%]
-  <tr>
-    <td>[% book.title %]</td>
-    <td>[% book.rating %]</td>
-    <td></td>
-  </tr>
-[% END -%]
-</table>
+
+<md-list ng-controller="BookListCtrl" ng-cloak>
+    <md-subheader class="md-no-sticky">This is a list of the books in the MyApp database</md-subheader>
+    <md-list-item ng-repeat="book in books" class="noright">
+        <p>{{ book.title }}</p>
+        <md-checkbox class="md-secondary" ng-model="book.selected"></md-checkbox>
+    </md-list-item>
+</md-list>
