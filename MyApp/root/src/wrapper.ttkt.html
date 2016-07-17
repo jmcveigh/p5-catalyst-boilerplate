@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="/static/css/normalize.min.css">
         <link rel="stylesheet" href="/static/css/html5boilerplate.css">
         <link rel="stylesheet" href="/static/css/angular-material.min.css">
+        <link rel="stylesheet" href="/static/css/docs.css">
         <link rel="stylesheet" href="/static/css/main.css" />
         
         <script src="/static/js/vendor/modernizr.min.js"></script>
@@ -84,7 +85,15 @@
                         <ng-md-icon icon="search"></ng-md-icon>
                     </md-button>
                 </div>
-
+                <div class="navBar" ng-controller="NavBarCtrl" ng-cloak>
+                  <md-content class="md-padding">
+                    <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
+                      <md-nav-item md-nav-click="goto('page1')" name="page1">Page One</md-nav-item>
+                      <md-nav-item md-nav-click="goto('page2')" name="page2">Page Two</md-nav-item>
+                      <md-nav-item md-nav-click="goto('page3')" name="page3">Page Three</md-nav-item>                      
+                    </md-nav-bar>                    
+                  </md-content>
+                </div>
                 <md-content class="md-padding">
                     <md-nav-bar nav-bar-aria-label="navigation links">
                         <md-nav-item>
@@ -131,12 +140,16 @@
         <script src="/static/js/vendor/jquery.min.js"></script>
         <script src="/static/js/plugins.js"></script>        
         
+        
         <script src="/static/js/angular.min.js"></script>
         <script src="/static/js/angular-animate.min.js"></script>
         <script src="/static/js/angular-aria.min.js"></script>
-        <script src="/static/js/angular-messages.min.js"></script>
-        <script src="/static/js/angular-material.min.js"></script>
+        <script src="/static/js/angular-route.min.js"></script>
+        <script src="/static/js/angular-messages.min.js"></script>        
+        <script src="/static/js/angular-material.min.js"></script>        
         <script src="/static/js/angular-material-icons.min.js"></script>
+        
+        <script src="/static/js/svg-assets-cache.js"></script>
         
         <script src="/static/js/react.min.js"></script>
         <script src="/static/js/react-dom.min.js"></script>

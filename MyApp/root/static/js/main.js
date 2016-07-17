@@ -2,7 +2,7 @@
 
 (function() {
     'use strict';
-    angular.module('MyApp', ['ngMaterial', 'ngMdIcons'])
+    angular.module('MyApp', ['ngMaterial', 'ngMdIcons', 'ngMessages', 'material.svgAssetsCache'])
     .controller('AppCtrl', ['$scope', '$mdBottomSheet','$mdSidenav', '$mdDialog', function($scope, $mdBottomSheet, $mdSidenav, $mdDialog) {
         $scope.toggleSidenav = function(menuId) {
             $mdSidenav(menuId).toggle();
@@ -50,10 +50,12 @@
             });
         };
     }])
+    .controller('NavBarCtrl', function($scope) {
+        $scope.currentNavItem = 'page1';
+    })
     .controller('BookListCtrl', function($scope, $http) {
         $http.get("booklist_json").then( function( $data ) {
             $scope.books = $data.data.data;
-            console.log($data.data.data[0]);
         });
     })
     .directive('userAvatar', function() {
